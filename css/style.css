@@ -498,3 +498,42 @@ section.work .wrapper .portfolio .portfolio_wrapper a img {
     height: 100%;
     object-fit: cover;;
 }
+
+
+main {
+    display: none;
+    opacity: 0; /* Initial state for the animation */
+    animation: fadeIn 1s ease forwards; /* Apply the animation */
+}
+
+/* When preloader is hidden, show the main content */
+#preloader[style*="display: none"] ~ main {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* Preloader CSS */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--dark);
+    z-index: 9999;
+}
+
+#preloader svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 150px;
+    width: 150px;
+}
+
